@@ -1,3 +1,6 @@
+use second::print_time;
+
+mod second;
 fn main() {
-    println!("Hello, world!");
+    print_time(String::from("Testing time print!"));
 }
