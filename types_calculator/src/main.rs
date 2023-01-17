@@ -7,14 +7,13 @@ enum Components {
 }
 
 fn parse_into_components(raw_string: String) -> Vec<Components> {
-    let components: Vec<Components> = raw_string
+    raw_string
         .split_whitespace()
         .map(|x| match x.parse::<i32>() {
             Ok(n) => Components::Value(n),
             Err(_) => Components::Plus,
         })
-        .collect();
-    components
+        .collect()
 }
 
 fn compute_from_components(comp_array: Vec<Components>) -> String {
